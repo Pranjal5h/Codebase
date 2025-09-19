@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Details</title>
+</head>
+<header>
+    <h1><b>Login Details</b></h1>
+</header>
+<body>
+    <form >
+        <h3>
+             <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="e.g: Pranjal Sharma" required><br><br>
+        Gender:   
+        <label for="Male">Male</label>
+        <input type="radio" id="Male" >
+        <label for="Female">Female</label>
+        <input type="radio" id="female" >
+        <label for="other">Other</label>
+        <input type="radio" id="Other" ><br><br>
+        <label for="Email Id">Email Id:</label>
+        <input type="Email Id" Id="Email Id" name ="Email Id" placeholder=" e.g.,thomasalpha@"><br></br>
+        <form action="/send-otp" method="post">
+            <label for="phone">Mobile Number:</label>
+            <input type="text" id="phone" name="phone" required>
+            <button type="submit">Send OTP</button>
+        </form>
+        <form action="/verify-otp" method="post">
+            <label for="otp">Enter OTP:</label>
+            <input type="text" id="otp" name="otp" required>
+            <button type="submit">Verify OTP</button>
+            <div id="g_id_onload"
+            data-client_id="YOUR_GOOGLE_CLIENT_ID"
+            data-context="signin"
+            data-ux_mode="popup"
+            data-callback="handleGoogleLogin">
+        </div>
+        <div class="g_id_signin" data-type="standard"></div>
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+        <script>
+        function handleGoogleLogin(response) {
+            console.log("Google JWT Token:", response.credential);
+            }
+            </script>
+
+        </form>
+
+        </h3>
+    </form>
+</body>
+</html>
